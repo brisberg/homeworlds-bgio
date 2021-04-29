@@ -2,7 +2,7 @@
 /node_modules
 
 # Built files
-/lib
+/public/build/
 
 # Log files
 yarn-error.log

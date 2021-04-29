@@ -1,10 +1,12 @@
 {
   "compilerOptions": {
-    "module": "CommonJs",
+    "jsx": "react",
+    "module": "ES2015",
     "lib": [
-      "ES2018"
+      "ES2018",
+      "DOM",
     ],
-    "target": "ES2018",
+    "target": "es2015",
     "moduleResolution": "Node",
     "outDir": "lib",
     "baseUrl": "src/",
@@ -19,7 +21,8 @@
     "noImplicitReturns": true
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "src/**/*.tsx"
   ],
   "exclude": [
     "node_modules"

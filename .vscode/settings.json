@@ -23,6 +23,9 @@
   "[typescript]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "xaver.clang-format"
-  }
+  },
   // Add package specific configurations below here
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  }
 }

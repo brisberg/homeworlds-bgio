@@ -5,6 +5,7 @@
 <main>
   <h1>Tic Tac Toe</h1>
   <Board playerID="0" />
+  <Board playerID="1" />
 </main>
 
 <style>

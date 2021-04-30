@@ -14,3 +14,7 @@ Deep, two-player strategy game based on Homewolds by Looney Labs. Powered by boa
 Uses [@brisberg/cruft-typescript-pkg](https://github.com/brisberg/cruft-typescript-pkg) as a template for Toolchain configuration.
 
 See that repo for a list of tools, documentation, and upgrade steps.
+
+## TODO
+
+Need to update this definition to specify it is built from the Svelte Template

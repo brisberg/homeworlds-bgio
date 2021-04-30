@@ -25,7 +25,7 @@
     "editor.defaultFormatter": "xaver.clang-format"
   },
   // Add package specific configurations below here
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "xaver.clang-format"
-  }
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
 }

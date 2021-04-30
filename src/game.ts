@@ -1,6 +1,5 @@
 import type {Ctx, Game} from 'boardgame.io';
 import {INVALID_MOVE} from 'boardgame.io/core';
-// import {Debug} from 'boardgame.io/debug';
 
 function isVictory(cells: GameState['cells']) {
   const positions: number[][] = [
@@ -63,62 +62,3 @@ export const TicTacToe: Game<GameState, Ctx, undefined> = {
     },
   },
 };
-
-// class TicTacToeBoard extends React.Component<BoardProps> {
-//   onClick(id: number) {
-//     this.props.moves.clickCell(id);
-//   }
-
-//   render() {
-//     let winner: JSX.Element|null = null;
-//     if (this.props.ctx.gameover) {
-//       winner = this.props.ctx.gameover.winner !== undefined ?
-//           (<div id = 'winner'>Winner: {this.props.ctx.gameover.winner}<
-//               /div>
-//       ) : (
-//         <div id="winner">Draw!</div>);
-//     }
-
-//     const cellStyle: CSSProperties = {
-//       cursor: 'pointer',
-//       border: '1px solid #555',
-//       width: '50px',
-//       height: '50px',
-//       lineHeight: '50px',
-//       textAlign: 'center',
-//       fontFamily: 'monospace',
-//       fontSize: '20px',
-//       fontWeight: 'bold',
-//     };
-
-//     const tbody = [];
-//     for (let i = 0; i < 3; i++) {
-//       const cells = [];
-//       for (let j = 0; j < 3; j++) {
-//         const id = 3 * i + j;
-//         cells.push(
-//             <td style = {cellStyle} key = {id} onClick =
-//                  {() => this.onClick(id)}>{this.props.G.cells[id]}<
-//                 /td>,
-//         );
-//       }
-//       tbody.push(<tr key={i}>{cells}</tr>);
-//       }
-
-//       return (
-//           <div><table id = 'board'>
-//           <tbody>{tbody}</tbody>
-//           </table>{winner}<
-//               /div>
-//     );
-//   }
-// }
-
-// const App = reactClient({
-//   board: TicTacToeBoard,
-//   game: TicTacToe,
-//   debug: {impl: Debug},
-// });
-
-// ReactDOM.render(<App />,
-//           document.getElementById('app'));

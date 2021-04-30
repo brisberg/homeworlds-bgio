@@ -1,5 +1,6 @@
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
+import replace from '@rollup/plugin-replace';
 import typescript from '@rollup/plugin-typescript';
 import * as cp from 'child_process';
 import css from 'rollup-plugin-css-only';
@@ -61,6 +62,10 @@ export default {
 
         // Compile Typescript files
         typescript({sourceMap: !production, inlineSources: !production}),
+
+        // Replace references to node 'process' for browser build
+        // https://github.com/EmilTholin/svelte-routing/issues/11#issuecomment-509105006
+        replace({'process.env.NODE_ENV': JSON.stringify('production')}),
 
         // In dev mode, call `npm run start` once
         // the bundle has been generated

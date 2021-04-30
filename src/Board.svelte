@@ -22,30 +22,28 @@
 </script>
 
 <div>
+  Current Player {$client.ctx.currentPlayer}
   <table id="board">
-    <tbody class="cell">Grid Here</tbody>
+    <tbody>
+      {#each Array(3) as _, row}
+        <tr>
+          {#each Array(3) as _, col}
+            <td
+              class="cell"
+              on:click={() => client.moves.clickCell(row * 3 + col)}
+            >
+              {$client.G.cells[row * 3 + col]}
+            </td>
+          {/each}
+        </tr>
+      {/each}
+    </tbody>
   </table>
-  <div id="winner">Winsdsdner: {winner}</div>
+  {#if winner}
+    <div id="winner">Winner: {winner}</div>
+  {/if}
 </div>
 
-<!-- <div class="client" class:active={$client.isActive}>
-  <li>
-    <strong>Player {playerID}</strong>
-  </li>
-
-  {#if $client.isActive}
-    <li>
-      {#if discard}
-        <button on:click={() => client.moves.discard()}>Discard</button>
-      {:else}
-        <button on:click={() => client.moves.militia()}>Play Card</button>
-      {/if}
-    </li>
-    <li>
-      <button on:click={() => client.events.endTurn()}>End Turn</button>
-    </li>
-  {/if}
-</div> -->
 <style>
   .cell {
     cursor: pointer;

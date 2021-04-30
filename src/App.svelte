@@ -1,15 +1,10 @@
 <script lang="ts">
   import Board from "./Board.svelte";
-  export let name: string;
 </script>
 
 <main>
-  <h1>Hello {name}!</h1>
-  <p>
-    Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn
-    how to build Svelte apps.
-  </p>
-  <Board />
+  <h1>Tic Tac Toe</h1>
+  <Board playerID="0" />
 </main>
 
 <style>

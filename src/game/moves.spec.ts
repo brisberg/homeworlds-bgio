@@ -69,15 +69,16 @@ describe('trade', () => {
        expect(result).toEqual(INVALID_MOVE);
      });
 
-  it('should return invalid if the player does not have access to Trade power',
-     () => {
-       ship.piece.color = Color.GREEN;
-       star.piece.color = Color.GREEN;
+  it.skip(
+      'should return invalid if the player does not have access to Trade power',
+      () => {
+        ship.piece.color = Color.GREEN;
+        star.piece.color = Color.GREEN;
 
-       const result = trade(state, ctx, ship.id, Color.RED);
+        const result = trade(state, ctx, ship.id, Color.RED);
 
-       expect(result).toEqual(INVALID_MOVE);
-     });
+        expect(result).toEqual(INVALID_MOVE);
+      });
 
   it('should exchange a ship for another of color of the same size', () => {
     ship.piece = {color: Color.GREEN, size: 0};

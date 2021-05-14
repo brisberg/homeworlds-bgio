@@ -2,11 +2,11 @@
   export let playerID: string;
   import { Client } from "boardgame.io/client";
   import { Local } from "boardgame.io/multiplayer";
-  import { TicTacToe } from "../game/game";
+  import { Homeworlds } from "../game/game";
   import { Debug } from "boardgame.io/debug";
 
   const client = Client({
-    game: TicTacToe,
+    game: Homeworlds,
     matchID: "default",
     playerID,
     debug: { impl: Debug },

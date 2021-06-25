@@ -2,7 +2,7 @@ import type {Ctx} from 'boardgame.io';
 import {INVALID_MOVE} from 'boardgame.io/core';
 import type {GameState, Piece, Ship} from '../state';
 
-// Module level constant for producing sequential, unique IDs
+// Module level counter for producing sequential, unique IDs
 let nextIDNum = 0;
 
 export function build(G: GameState, ctx: Ctx, shipId: string): string {
@@ -13,13 +13,7 @@ export function build(G: GameState, ctx: Ctx, shipId: string): string {
   }
 
   const color = ship.piece.color;
-
   const pieces = G.bank[color];
-  if (pieces.reduce((sum, v) => sum + v, 0) === 0) {
-    // No pieces left in the bank.
-    return INVALID_MOVE;
-  }
-
   const piece: Piece = {color, size: -1};
   for (const [size, num] of pieces.entries()) {
     if (num > 0) {
@@ -27,6 +21,11 @@ export function build(G: GameState, ctx: Ctx, shipId: string): string {
       pieces[size] = num - 1;
       break;
     }
+  }
+
+  if (piece.size === -1) {
+    // No piece available for build
+    return INVALID_MOVE;
   }
 
   const newShip: Ship = {

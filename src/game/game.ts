@@ -1,6 +1,6 @@
 import type {Ctx, Game} from 'boardgame.io';
 import {GameState, initialData} from './state';
-import {trade} from './moves';
+import {trade} from './moves/trade';
 
 // function isVictory(cells: GameState['cells']) {
 //   const positions: number[][] = [

@@ -1,7 +1,7 @@
 import type {Ctx} from 'boardgame.io';
 import {INVALID_MOVE} from 'boardgame.io/core';
-import {trade} from './moves';
-import {Color, GameState, Ship, StarSystem} from './state';
+import {trade} from './trade';
+import {Color, GameState, Ship, StarSystem} from '../state';
 
 describe('trade', () => {
   let state: GameState;

@@ -1,6 +1,6 @@
 import type {Ctx, MoveFn} from 'boardgame.io';
 import {INVALID_MOVE} from 'boardgame.io/core';
-import type {Color, GameState} from './state';
+import type {Color, GameState} from '../state';
 
 export const trade: MoveFn<GameState, Ctx> =
     (G, ctx, shipId: string, color: Color) => {

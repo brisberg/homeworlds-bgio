@@ -1,6 +1,6 @@
 import type {Ctx, Game} from 'boardgame.io';
 import {GameState, initialData} from './state';
-import {trade, travel} from './moves';
+import {capture, trade, travel} from './moves';
 
 // function isVictory(cells: GameState['cells']) {
 //   const positions: number[][] = [
@@ -25,7 +25,7 @@ import {trade, travel} from './moves';
 export const Homeworlds: Game<GameState, Ctx, undefined> = {
   setup: () => ({...initialData}),
 
-  moves: {trade, travel},
+  moves: {capture, trade, travel},
 
   turn: {moveLimit: 1},
 

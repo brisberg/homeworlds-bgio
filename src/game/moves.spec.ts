@@ -59,7 +59,7 @@ describe('trade', () => {
     expect(result).toEqual(INVALID_MOVE);
   });
 
-  it('should return invalid if there are no coresponding pieces in the bank',
+  it('should return invalid if there are no corresponding pieces in the bank',
      () => {
        const size = ship.piece.size;
        state.bank[Color.RED][size] = 0;

@@ -71,7 +71,7 @@ describe('travel', () => {
     });
 
     it('if discovering a new star the same size as the current one', () => {
-      state.bank[Color.GREEN][0] = 1;
+      state.bank[Color.GREEN][1] = 1;
       star1.piece.size = 1;
       const errorSpy = jest.spyOn(console, 'error').mockReturnValue();
 
@@ -92,12 +92,12 @@ describe('travel', () => {
 
       const result = travel(state, ctx, 'ship1', 'newStar', {
         color: Color.GREEN,
-        size: 2,
+        size: 1,
       });
 
       expect(result).toEqual(INVALID_MOVE);
       expect(errorSpy).toHaveBeenCalledWith(
-          'No green:2 pieces remaining to create a new star.');
+          'No green:1 pieces remaining to create a new star.');
       errorSpy.mockRestore();
     });
 
@@ -126,14 +126,14 @@ describe('travel', () => {
     state.bank.red[2] = 1;
     const result = travel(state, ctx, 'ship1', 'star3', {
       color: Color.RED,
-      size: 3,
+      size: 2,
     });
 
     expect(result).toBeUndefined();
     expect(ship.location).toEqual('star3');
     expect(state.stars['star3']).toEqual({
       id: 'star3',
-      piece: {color: Color.RED, size: 3},
+      piece: {color: Color.RED, size: 2},
     });
     const bank = state.bank;
     expect(bank.red[2]).toEqual(0);

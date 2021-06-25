@@ -28,7 +28,7 @@ export function travel(
       return INVALID_MOVE;
     }
 
-    if (G.bank[newPiece.color][newPiece.size - 1] <= 0) {
+    if (G.bank[newPiece.color][newPiece.size] <= 0) {
       console.error(`No ${newPiece.color}:${
           newPiece.size} pieces remaining to create a new star.`);
       return INVALID_MOVE;
@@ -44,7 +44,7 @@ export function travel(
     }
 
     G.stars[destStarId] = dest;
-    G.bank[newPiece.color][newPiece.size - 1]--;
+    G.bank[newPiece.color][newPiece.size]--;
   }
 
   if (!isConnected(star, dest)) {

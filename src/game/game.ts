@@ -1,11 +1,11 @@
 import type {Ctx, Game} from 'boardgame.io';
 import {GameState, initialData} from './state';
-import {build, capture, trade, travel} from './moves';
+import {catastrophy, build, capture, trade, travel} from './moves';
 
 export const Homeworlds: Game<GameState, Ctx, undefined> = {
   setup: () => ({...initialData}),
 
-  moves: {build, capture, trade, travel},
+  moves: {catastrophy, build, capture, trade, travel},
 
   turn: {moveLimit: 1},
 
